@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="homestyle.css">
+</head>
+
+<body>
+
+  <sidebar class="sidenav">
+    <a href="#profile">Profile</a>
+    <a href="#aboutus">About Us</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact">Search</a>
+    <button class="dropdown-btn">Frequent Routes
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a href="#">Route 1</a>
+      <a href="#">Route 2</a>
+      <a href="#">Route 3</a>
+    </div>
+    <a href="page one.html">Logout</a>
+
+
+  </sidebar>
+  <h1>Hey, Welcome Back!</h1>
+  <table class=center>
+    <tr>
+      <td>
+        <label for="source">Where are you now?</label><br>
+        <input class="form-control" id="source" type="text" placeholder="Source">
+      </td>
+      <td>
+        <label for="destn">Where are you headed to?</label><br>
+        <input class="form-control" id="source" type="text" placeholder="Destination">
+      </td>
+      <td> 
+        <br>
+        <button class="btn btn-success b1" onclick="image()">Find routes</button>
+      </td>
+    </tr>
+  </table>
+  <div class="container" id="map"> hello</div>
+
+  <script src="home.js"></script>
+  <script>
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+      dropdown[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+        } else {
+          dropdownContent.style.display = "block";
+        }
+      });
+    }
+  </script>
+
+</body>
+
+</html>
